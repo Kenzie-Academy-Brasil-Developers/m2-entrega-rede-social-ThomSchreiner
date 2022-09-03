@@ -14,7 +14,9 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: var(--grey-1);
-    margin-bottom: 55px;
+    position: fixed;
+    left: 0%;
+    top: 0;
 }
 
 header figure {
@@ -56,9 +58,10 @@ form {
     gap: 20px;
     padding: 40px 24px;
     background-color: var(--whiteFixed);
-    margin: 0 5%;
+    margin: 130px 5% 0 5%;
     border-radius: var(--radius-big);
-    max-width: 461px;
+    width: 461px;
+    max-width: 100%;
 }
 
 form h1 {
