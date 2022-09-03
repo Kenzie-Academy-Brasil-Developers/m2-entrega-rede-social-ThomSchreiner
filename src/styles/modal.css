@@ -1,0 +1,90 @@
+.modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--grey-opacity-1);
+    align-items: end;
+    justify-content: end;
+    padding: 0 22px 44px 0;
+    z-index: 10;
+    display: none;
+    opacity: 0;
+}
+
+.modal > div {
+    background-color: var(--brand-1);
+    border-radius: var(--radius-big);
+    padding: 32px 20px 24px 20px;
+    width: 466px;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 140%);
+}
+
+.modal div p {
+    color: var(--whiteFixed);
+    margin-bottom: 19px;
+    width: 80%;
+    font-weight: 600;
+    cursor: default;
+}
+
+.modal div span {
+    display: block;
+    width: 80%;
+    color: var(--whiteFixed);
+    margin-bottom: 8px;
+    cursor: default;
+}
+
+.modal > div > div {
+    text-align: end;
+}
+
+.modal > div > div button {
+    padding: 0 12px;
+}
+
+.show__modal {
+    display: flex;
+    animation: mostrarModal 0.8s both;
+}
+
+.close__modal {
+    animation: removerModal 0.8s both;
+}
+
+.show__modal .div {
+    animation: mostrarDivModal 0.8s both;
+}
+
+@keyframes mostrarModal {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes removerModal {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes mostrarDivModal {
+    0% {
+        transform: translate(25%, 140%);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}

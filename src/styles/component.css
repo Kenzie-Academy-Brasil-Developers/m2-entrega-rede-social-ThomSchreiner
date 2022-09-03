@@ -8,6 +8,7 @@
 }
 
 .input:focus {
+    outline: var(--brand-1);
     border-color: var(--brand-1);
     color: var(--grey-1);
 }
@@ -26,6 +27,7 @@
 }
 
 .textarea:focus {
+    outline: var(--brand-1);
     border-color: var(--brand-1);
     color: var(--grey-1);
 }
