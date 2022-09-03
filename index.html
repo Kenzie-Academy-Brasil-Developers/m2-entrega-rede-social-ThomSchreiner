@@ -1,12 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/reset.css">
+    <link rel="stylesheet" href="src/styles/typography.css">
+    <link rel="stylesheet" href="src/styles/component.css">
+    <link rel="stylesheet" href="src/styles/index.css">
+    <link rel="shortcut icon" href="./src/assets/logoKenzie.jpeg" type="image/x-icon">
     <title>Rede Social</title>
 </head>
 <body>
-    
+    <header>
+        <figure>
+            <img src="./src/assets/TechPosters.svg" alt="Tech Posters">
+        </figure>
+        <nav>
+            <ul>
+                <li><a href="./index.html" class="text-2">Entrar</a></li>
+                <li><a href="./src/pages/signup/signup.html" class="text-2">Criar nova conta</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form>
+        <h1 class="title-1">Conecte-se na sua conta</h1>
+        <input class="text-1 input" type="email" placeholder="Seu e-mail">
+        <input class="text-1 input" type="password" placeholder="Sua senha">
+        <button class="btn" type="submit">Entrar</button>
+        <span class="text-3">Ainda não possui cadastro</span>
+        <a href="./src/pages/signup/signup.html"><button class="btn__outline__medium" type="button">Ir para página de registro</button></a>
+    </form>
 </body>
 </html>

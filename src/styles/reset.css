@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+:root {
+    /* COLORS */
+    --brand-1: #4263EB;
+    --brand-2: #364FC7;
+    --grey-0: #0A0C0D;
+    --grey-1: #212529;
+    --grey-2: #495057;
+    --grey-3: #868E96;
+    --grey-4: #DEE2E6;
+    --grey-5: #F8F9FA;
+    --grey-opacity-1: rgba(33, 37, 41, 0.5);
+    --whiteFixed: #FFFFFF;
+    --like: #D7443E;
+
+    /* TYPOGRAPHY */
+    --title-1-font-size: 28px;
+    --title-2-font-size: 20px;
+    --text-1-font-size: 16px;
+    --text-2-font-size: 14px;
+    --text-3-font-size: 12px;
+
+    --title-1-font-weight: 700;
+    --title-2-font-weight: 600;
+    --text-1-font-weight: 400;
+    --text-2-font-weight: 400;
+    --text-3-font-weight: 400;
+
+    --title-1-line-height: 40px;
+    --title-2-line-height: 24px;
+    --text-1-line-height: 28px;
+    --text-2-line-height: 16px;
+    --text-3-line-height: 16px;
+
+    /* BUTTONS AND INPUTS */
+    --radius-big: 8px;
+    --radius: 4px;
+    --radius-medium: 2px;
+
+    --input-heigth: 52px;
+    --input-padding-left: 20px;
+
+    --textarea-heigth: 130px;
+    --textarea-padding-left: 20px;
+
+    --button-heigth: 38px;
+    --button-medium-heigth: 28px;
+}

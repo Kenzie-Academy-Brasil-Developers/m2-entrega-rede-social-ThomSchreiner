@@ -1,0 +1,101 @@
+/* INPUTS */
+.input {
+    height: var(--input-heigth);
+    padding-left: var(--input-padding-left);
+    border: 2px solid var(--grey-4);
+    border-radius: var(--radius);
+    color: var(--grey-2);
+}
+
+.input:focus {
+    border-color: var(--brand-1);
+    color: var(--grey-1);
+}
+
+.input::placeholder {
+    color: var(--grey-3);
+}
+
+/* TEXTAREA */
+.textarea {
+    height: var(--textarea-heigth);
+    padding-left: var(--textarea-padding-left);
+    border: 2px solid var(--grey-4);
+    border-radius: var(--radius);
+    color: var(--grey-2);
+}
+
+.textarea:focus {
+    border-color: var(--brand-1);
+    color: var(--grey-1);
+}
+
+.textarea::placeholder {
+    color: var(--grey-3);
+}
+
+/* BUTTONS */
+.btn {
+    height: var(--button-heigth);
+    background-color: var(--brand-1);
+    border: 2px solid var(--brand-1);
+    color: var(--whiteFixed);
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--brand-2);
+    border: 2px solid var(--brand-2);
+}
+
+.btn__grey1 {
+    background-color: var(--grey-1);
+    border: 2px solid var(--grey-1);
+}
+
+.btn__grey1:hover {
+    background-color: var(--grey-0);
+    border: 2px solid var(--grey-0);
+}
+
+.btn__white {
+    background-color: var(--whiteFixed);
+    border: 2px solid var(--whiteFixed);
+    color: var(--grey-1);
+}
+
+.btn__white:hover {
+    background-color: var(--grey-5);
+    border: 2px solid var(--grey-5);
+}
+
+.btn__disabled {
+    background-color: var(--grey-4);
+    border: 2px solid var(--grey-4);
+    color: var(--grey-3);
+}
+
+.btn__outline__medium {
+    height: var(--button-medium-heigth);
+    background-color: var(--whiteFixed);
+    border: 1px solid var(--grey-1);
+    color: var(--grey-1);
+    border-radius: var(--radius-medium);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn__outline__medium:hover {
+    background-color: #EDF2FF;
+    border-color: var(--brand-1);
+    color: var(--brand-1);
+}
+
+.btn__outline__medium__active {
+    background-color: var(--brand-1);
+    color: var(--whiteFixed);
+}
