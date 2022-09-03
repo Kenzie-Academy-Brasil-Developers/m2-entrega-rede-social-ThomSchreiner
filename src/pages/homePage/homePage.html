@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/reset.css">
+    <link rel="stylesheet" href="../../styles/typography.css">
+    <link rel="stylesheet" href="../../styles/component.css">
+    <link rel="stylesheet" href="../../styles/modal.css">
+    <link rel="stylesheet" href="./homePage.css">
+    <link rel="shortcut icon" href="../../assets/logoKenzie.jpeg" type="image/x-icon">
+    <script defer type="module" src="homePage.js"></script>
+    <title>Rede Social - Home</title>
+</head>
+<body>
+    <section class="modal">
+        <div>
+            <p class="text-1">Acesso não autorizado</p>
+            <span class="text-2">Essa conta não existe, logo não pode acessar a página dos posts</span>
+            <div>
+                <button class="btn btn__white">Entendi</button>
+            </div>
+        </div>
+    </section>
+    <header>
+        <figure>
+            <img src="../../assets/TechPosters.svg" alt="Tech Posters">
+        </figure>
+        <nav>
+            <ul>
+                <li><button class="text-2">Sair</button></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="form__user">
+        <div class="user">
+            <img src="https://i.pinimg.com/564x/bc/50/1d/bc501ddf72e53793cc1074ee0bfe722c.jpg" alt="Thomas Schreiner">
+            <div>
+                <div>
+                    <h2 class="title-2">Thomas Schreiner</h2>
+                    <p class="text-2">Front-End Developer</p>
+                </div>
+                <span class="text-3">565 seguidores</span>
+            </div>
+        </div>
+        <form>
+            <input class="text-1 input" type="text" placeholder="Digitar título do post">
+            <textarea class="text-1 textarea" placeholder="Digitar descrição do post"></textarea>
+            <div>
+                <button class="btn btn__disabled" type="button">Postar</button>
+            </div>
+        </form>
+    </section>
+    <aside>
+        <h2>Sugestões para você seguir</h2>
+        <ul>
+            <li class="user">
+                <div class="user__header">
+                    <img src="https://i.pinimg.com/564x/bc/50/1d/bc501ddf72e53793cc1074ee0bfe722c.jpg" alt="Thomas Schreiner">
+                    <div>
+                        <h2 class="title-2">Thomas Schreiner</h2>
+                        <p class="text-2">Front-End Developer</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn__outline__medium">Seguir</button>
+                </div>
+            </li>
+            <li class="user">
+                <div class="user__header">
+                    <img src="https://i.pinimg.com/564x/bc/50/1d/bc501ddf72e53793cc1074ee0bfe722c.jpg" alt="Thomas Schreiner">
+                    <div>
+                        <h2 class="title-2">Thomas Schreiner</h2>
+                        <p class="text-2">Front-End Developer</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn__outline__medium">Seguir</button>
+                </div>
+            </li>
+        </ul>
+    </aside>
+    <main>
+        <h1 class="title-1">Posts</h1>
+        <ul>
+            <li>
+                <div class="user">
+                    <img src="https://i.pinimg.com/564x/bc/50/1d/bc501ddf72e53793cc1074ee0bfe722c.jpg" alt="Thomas Schreiner">
+                    <div>
+                        <h2 class="title-2">Thomas Schreiner</h2>
+                        <p class="text-2">Front-End Developer</p>
+                    </div>
+                </div>
+                <h2 class="title-1">Como criar um interface simples e agradável utilizando boas práticas de design</h2>
+                <p class="text-1">Hoje vamos conversar sobre como criar uma interface agradável mesmo sem ter um design pronto feito por um profissional de UI design.</p>
+                <div class="user__footer">
+                    <button class="btn btn__grey1">Abrir Post</button>
+                    <img src="../../assets/heartBlack.png" alt="linke">
+                    <span class="text-2">25</span>
+                </div>
+            </li>
+            <li>
+                <div class="user">
+                    <img src="https://i.pinimg.com/564x/bc/50/1d/bc501ddf72e53793cc1074ee0bfe722c.jpg" alt="Thomas Schreiner">
+                    <div>
+                        <h2 class="title-2">Thomas Schreiner</h2>
+                        <p class="text-2">Front-End Developer</p>
+                    </div>
+                </div>
+                <h2 class="title-1">Como criar um interface simples e agradável utilizando boas práticas de design</h2>
+                <p class="text-1">Hoje vamos conversar sobre como criar uma interface agradável mesmo sem ter um design pronto feito por um profissional de UI design.</p>
+                <div class="user__footer">
+                    <button class="btn btn__grey1">Abrir Post</button>
+                    <img src="../../assets/heartBlack.png" alt="linke">
+                    <span class="text-2">25</span>
+                </div>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>

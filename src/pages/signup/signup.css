@@ -77,10 +77,6 @@ form div h1 {
     cursor: default;
 }
 
-form div a .btn__outline__medium {
-    padding: 0 12px;
-}
-
 form span {
     text-align: center;
     cursor: default;

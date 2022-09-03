@@ -1,0 +1,230 @@
+body {
+    background-color: var(--whiteFixed);
+}
+
+header {
+    height: 75px;
+    width: 100%;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--grey-1);
+    position: fixed;
+    left: 0%;
+    top: 0;
+    overflow-x: auto;
+}
+
+header figure {
+    flex: 0 0 auto;
+    margin-right: 10px;
+}
+
+header nav ul li {
+    height: 32px;
+}
+
+header nav ul li button {
+    background-color: transparent;
+    color: var(--whiteFixed);
+    padding: 0 8px;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.form__user {
+    margin: 124px 5% 0 5%;
+}
+
+.user {
+    display: flex;
+    overflow-x: auto;
+}
+
+.user img {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+}
+
+.user > div {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.user > div > div {
+    margin-right: 7px;
+    margin-bottom: 8px;
+}
+
+.user > div h2 {
+    white-space: nowrap;
+    margin-bottom: 8px;
+    cursor: default;
+}
+
+.user > div p {
+    white-space: nowrap;
+    cursor: default;
+}
+
+.user > div span {
+    white-space: nowrap;
+    padding-top: 2px;
+    cursor: default;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 40px;
+    width: 461px;
+    max-width: 100%;
+}
+
+form div {
+    text-align: end;
+}
+
+
+aside {
+    margin-top: 40px;
+}
+
+aside > h2 {
+    margin: 0 5% 60px 5%;
+    cursor: default;
+}
+
+aside ul {
+    display: flex;
+    overflow-x: auto;
+    gap: 32px;
+    padding: 0 5% 0 5%;
+}
+
+aside .user {
+    flex-direction: column;
+    width: max-content;
+    overflow: unset;
+}
+
+aside .user .user__header {
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+}
+
+main {
+    margin: 40px 5% 0 5%;
+}
+
+main h1 {
+    margin-bottom: 50px;
+    cursor: default;
+}
+
+main ul li {
+    margin-bottom: 50px;
+}
+
+main ul li .user {
+    margin-bottom: 32px;
+}
+
+main ul li .user > div {
+    display: block;
+}
+
+main ul li h2 {
+    margin-bottom: 20px;
+}
+
+main ul li > p {
+    margin-bottom: 32px;
+    max-height: 85px;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+}
+
+main ul li .user__footer {
+    display: flex;
+    align-items: center;
+}
+
+main ul li .user__footer button {
+    margin-right: 32px;
+}
+
+main ul li .user__footer img {
+    margin-right: 7px;
+    cursor: pointer;
+}
+
+main ul li .user__footer span {
+    cursor: default;
+}
+
+@media (min-width: 768px) {
+    body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .form__user {
+        grid-column: 1/3;
+        margin: 124px 0 0 7%;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    aside {
+        margin: 124px 5% 0 0;
+        grid-row: 1/3;
+        grid-column: 3;
+    }
+
+    aside > h2 {
+        position: sticky;
+        top: 90px;
+        left: 0;
+    }
+
+    aside ul {
+        position: sticky;
+        top: 170px;
+        left: 0;
+        flex-direction: column;
+        gap: 61px;
+    }
+
+    aside ul .user {
+        flex-direction: row;
+        justify-content: space-between;
+        width: auto;
+        flex-wrap: wrap;
+    }
+
+    main {
+        grid-column: 1/3;
+        margin: 40px 0 0 7%;
+    }
+
+    main h1 {
+        width: 90%;
+    }
+
+    main ul {
+        width: 90%;
+    }
+}
+
+

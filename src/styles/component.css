@@ -20,10 +20,11 @@
 /* TEXTAREA */
 .textarea {
     height: var(--textarea-heigth);
-    padding-left: var(--textarea-padding-left);
+    padding: calc(var(--textarea-padding-left) / 2) var(--textarea-padding-left);
     border: 2px solid var(--grey-4);
     border-radius: var(--radius);
     color: var(--grey-2);
+    resize: none;
 }
 
 .textarea:focus {
@@ -43,9 +44,10 @@
     border: 2px solid var(--brand-1);
     color: var(--whiteFixed);
     border-radius: var(--radius);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
+    padding: 0 12px;
 }
 
 .btn:hover {
@@ -78,6 +80,12 @@
     background-color: var(--grey-4);
     border: 2px solid var(--grey-4);
     color: var(--grey-3);
+    cursor: default;
+}
+
+.btn__disabled:hover {
+    background-color: var(--grey-4);
+    border: 2px solid var(--grey-4);
 }
 
 .btn__outline__medium {
@@ -89,6 +97,7 @@
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
+    padding: 0 12px;
 }
 
 .btn__outline__medium:hover {
