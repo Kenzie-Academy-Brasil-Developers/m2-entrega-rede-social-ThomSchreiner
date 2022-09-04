@@ -48,6 +48,7 @@
     font-weight: 600;
     cursor: pointer;
     padding: 0 12px;
+    transition: 0.1s linear;
 }
 
 .btn:hover {
@@ -98,6 +99,7 @@
     font-weight: 600;
     cursor: pointer;
     padding: 0 12px;
+    transition: 0.1s linear;
 }
 
 .btn__outline__medium:hover {

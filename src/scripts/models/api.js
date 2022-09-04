@@ -1,3 +1,4 @@
+import { Render } from "../../pages/homePage/homePage.js"
 import { Modal } from "./modal.js"
 
 export class Api {
@@ -51,26 +52,97 @@ export class Api {
         return request
     }
 
-    static async getUser() {
+    static getUser() {
         const user_uuid = localStorage.getItem("@kenzieRedeSocial:user_uuid")
-        const user = await fetch(`${this.urlBase}users/${user_uuid}/`, {
+        const user = fetch(`${this.urlBase}users/${user_uuid}/`, {
                                 method: "GET",
                                 headers: this.header
                             })
                             .then(resp => resp.json())
-                            .then(resp => resp)
+                            .then(resp => {
+                                Render.getUser(resp)
+                                return resp
+                            })
                             .catch(erro => console.log(erro))
+    }
+
+    static async getSuggestedUsers() {
+        const storageCountUser = localStorage.getItem("@KenzieRedeSocial:countUsers")
+        let user = ""
+        if(storageCountUser == null) {
+            user = await fetch(`${this.urlBase}users/?limit=1&offset=1`, {
+                                    method: "GET",
+                                    headers: this.header
+                                })
+                                .then(resp => resp.json())
+                                .then(resp => {
+                                    localStorage.setItem("@KenzieRedeSocial:countUsers", resp.count)
+                                    randomUser(resp.count)
+                                    return resp
+                                })
+                                .catch(erro => console.log(erro))
+        } else {
+            randomUser(storageCountUser)
+        }
+        
+        async function randomUser(countUsers) {
+            const offSet = Math.floor(Math.random() * (countUsers-10 - 10) + 10)
+
+            user = await fetch(`${Api.urlBase}users/?limit=10&offset=${offSet}`, {
+                method: "GET",
+                headers: Api.header
+            })
+            .then(resp => resp.json())
+            .then(resp => {
+                Render.suggestionToFollow(resp.results)
+                return resp
+            })
+            .catch(erro => console.log(erro))
+        }
+
         return user
     }
 
-    static async getAllPosts() {
-        const posts = await fetch(`${this.urlBase}posts/`, {
+    static getAllPosts() {
+        const postCount = fetch(`${this.urlBase}posts/`, {
+                            method: "GET",
+                            headers: this.header
+                        })
+                        .then(resp => resp.json())
+                        .then(resp => {
+                            getLastPosts(resp.count)
+                            return resp
+                        })
+                        .catch(erro => console.log(erro))
+
+        async function getLastPosts(countPosts) {
+            const posts = await fetch(`${Api.urlBase}posts/?limit=10&offset=${countPosts-10}`, {
                                 method: "GET",
-                                headers: this.header
+                                headers: Api.header
                             })
                             .then(resp => resp.json())
-                            .then(resp => resp)
+                            .then(resp => {
+                                Render.getAllPosts(resp.results)
+                                return resp
+                            })
                             .catch(erro => console.log(erro))
-        return posts
+            return posts
+        }
+    }
+
+    static async createPost(body, inputs) {
+        const post = await fetch(`${this.urlBase}posts/`, {
+                            method: "POST",
+                            headers: this.header,
+                            body: JSON.stringify(body)
+                        })
+                        .then(resp => resp.json())
+                        .then(resp => {
+                            for(let i of inputs) { i.value = "" }
+                            Api.getAllPosts()
+                            return resp
+                        })
+                        .catch(erro => console.log(erro))
+        return post
     }
 }
