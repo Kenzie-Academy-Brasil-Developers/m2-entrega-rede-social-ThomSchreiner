@@ -5,7 +5,7 @@ export class Api {
     static token = localStorage.getItem("@kenzieRedeSocial:token")
     static header = {
         "Content-Type": "application/json",
-        Autorization: `token ${this.token}`
+        Authorization: `Token ${this.token}`
     }
 
     static async createAccount(body, inputs) {
@@ -49,5 +49,28 @@ export class Api {
                                 })
                                 .catch(erro => console.log(erro))
         return request
+    }
+
+    static async getUser() {
+        const user_uuid = localStorage.getItem("@kenzieRedeSocial:user_uuid")
+        const user = await fetch(`${this.urlBase}users/${user_uuid}/`, {
+                                method: "GET",
+                                headers: this.header
+                            })
+                            .then(resp => resp.json())
+                            .then(resp => resp)
+                            .catch(erro => console.log(erro))
+        return user
+    }
+
+    static async getAllPosts() {
+        const posts = await fetch(`${this.urlBase}posts/`, {
+                                method: "GET",
+                                headers: this.header
+                            })
+                            .then(resp => resp.json())
+                            .then(resp => resp)
+                            .catch(erro => console.log(erro))
+        return posts
     }
 }
