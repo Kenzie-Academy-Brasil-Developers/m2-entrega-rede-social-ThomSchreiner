@@ -1,5 +1,4 @@
 import { Api } from "./models/api.js";
-import { Modal } from "./models/modal.js";
 
 class Login {
     static async loginAccount() {
@@ -27,11 +26,3 @@ class Login {
 }
 
 Login.events()
-
-
-
-// setTimeout(() => {
-//     Modal.loginErro("Essa conta não existe, logo não pode acessar a página dos posts")
-// }, 1000)
-
-

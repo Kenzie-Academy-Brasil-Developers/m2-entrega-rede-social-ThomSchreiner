@@ -1,4 +1,4 @@
-import { Modal } from "./modal.js"
+import { ModalErro } from "./modal.js"
 import { Render } from "./render.js"
 
 export class Api {
@@ -18,7 +18,7 @@ export class Api {
                                 .then(resp => resp.json())
                                 .then(resp => {
                                     if(resp.email == "user with this email already exists.") {
-                                        Modal.signupErro("Já existe outro usuário com este endereço de email.")
+                                        ModalErro.signupErro("Já existe outro usuário com este endereço de email.")
 
                                     } else {
                                         for(let i of inputs) { i.value = "" }
@@ -40,7 +40,7 @@ export class Api {
                                 .then(resp => resp.json())
                                 .then(resp => {
                                     if(resp.non_field_errors) {
-                                        Modal.signupErro("O email que você inseriu não está cadastrado, confira seu email ou cadastre-se")
+                                        ModalErro.signupErro("O email que você inseriu não está cadastrado, confira seu email ou cadastre-se")
                                     } else {
                                         for(let i of inputs) { i.value = "" }
                                         localStorage.setItem("@kenzieRedeSocial:token", resp.token)

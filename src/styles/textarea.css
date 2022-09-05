@@ -1,0 +1,18 @@
+.textarea {
+    height: var(--textarea-heigth);
+    padding: calc(var(--textarea-padding-left) / 2) var(--textarea-padding-left);
+    border: 2px solid var(--grey-4);
+    border-radius: var(--radius);
+    color: var(--grey-2);
+    resize: none;
+}
+
+.textarea:focus {
+    outline: var(--brand-1);
+    border-color: var(--brand-1);
+    color: var(--grey-1);
+}
+
+.textarea::placeholder {
+    color: var(--grey-3);
+}

@@ -1,5 +1,5 @@
 import { Api } from "../../scripts/models/api.js";
-import { Render } from "../../scripts/models/render.js";
+import { Modal } from "../../scripts/models/modal.js";
 
 
 class HomePage {
@@ -61,13 +61,11 @@ class HomePage {
         })
     }
 
-    static like() {
-        
-    }
 }
 
 HomePage.logOut()
+HomePage.createPost()
+Modal.eventCloseModal()
 Api.getUser()
 Api.getAllPosts()
 Api.getSuggestedUsers()
-HomePage.createPost()

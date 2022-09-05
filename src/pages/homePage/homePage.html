@@ -9,7 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../styles/reset.css">
     <link rel="stylesheet" href="../../styles/typography.css">
-    <link rel="stylesheet" href="../../styles/component.css">
+    <link rel="stylesheet" href="../../styles/input.css">
+    <link rel="stylesheet" href="../../styles/textarea.css">
+    <link rel="stylesheet" href="../../styles/button.css">
     <link rel="stylesheet" href="../../styles/modal.css">
     <link rel="stylesheet" href="./homePage.css">
     <link rel="shortcut icon" href="../../assets/logoKenzie.jpeg" type="image/x-icon">
@@ -17,13 +19,27 @@
     <title>Rede Social - Home</title>
 </head>
 <body>
-    <section class="modal">
+    <section class="modal__erro">
         <div>
             <p class="text-1">Acesso não autorizado</p>
             <span class="text-2">Essa conta não existe, logo não pode acessar a página dos posts</span>
             <div>
                 <button class="btn btn__white">Entendi</button>
             </div>
+        </div>
+    </section>
+    <section class="modal">
+        <div>
+            <button data-modal="close"></button>
+            <div class="user">
+                <img src="../../assets/user.png" alt="user name">
+                <div>
+                    <h2 class="title-2">user name</h2>
+                    <p class="text-2">work at</p>
+                </div>
+            </div>
+            <h2 class="title-1 modal__titulo">Título...</h2>
+            <p class="text-1 modal__descricao">Descrição...</p>
         </div>
     </section>
     <header>
@@ -60,10 +76,10 @@
         <ul>
             <li class="user">
                 <div class="user__header">
-                    <img src="../../assets/user.png" alt="Thomas Schreiner">
+                    <img src="../../assets/user.png" alt="work at">
                     <div>
-                        <h2 class="title-2">Thomas Schreiner</h2>
-                        <p class="text-2">Front-End Developer</p>
+                        <h2 class="title-2">user name</h2>
+                        <p class="text-2">work at</p>
                     </div>
                 </div>
                 <div>
@@ -72,10 +88,10 @@
             </li>
             <li class="user">
                 <div class="user__header">
-                    <img src="../../assets/user.png" alt="Thomas Schreiner">
+                    <img src="../../assets/user.png" alt="work at">
                     <div>
-                        <h2 class="title-2">Thomas Schreiner</h2>
-                        <p class="text-2">Front-End Developer</p>
+                        <h2 class="title-2">work at</h2>
+                        <p class="text-2">work at</p>
                     </div>
                 </div>
                 <div>

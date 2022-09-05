@@ -1,4 +1,5 @@
 import { Api } from "./api.js"
+import { Modal } from "./modal.js"
 
 export class Render {
     static getUser(user) {
@@ -64,6 +65,7 @@ export class Render {
             imgLike.alt = "like"
             imgLike.id = post.uuid
             button.innerText = "Abrir Post"
+            button.setAttribute("data-modal", "open")
             spanLike.innerText = post.likes.length
 
             let verificarLike = post.likes.find((element) => {
@@ -86,6 +88,7 @@ export class Render {
             ulPosts.appendChild(li)
 
             imgLike.addEventListener("click", eventLike)
+            button.addEventListener("click", Modal.eventOpenModal)
         })
     }
 

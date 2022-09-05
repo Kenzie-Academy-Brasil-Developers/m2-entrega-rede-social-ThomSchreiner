@@ -1,4 +1,4 @@
-.modal {
+.modal__erro {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -13,7 +13,7 @@
     opacity: 0;
 }
 
-.modal > div {
+.modal__erro > div {
     background-color: var(--brand-1);
     border-radius: var(--radius-big);
     padding: 32px 20px 24px 20px;
@@ -24,7 +24,7 @@
     transform: translate(25%, 140%);
 }
 
-.modal div p {
+.modal__erro div p {
     color: var(--whiteFixed);
     margin-bottom: 19px;
     width: 80%;
@@ -32,7 +32,7 @@
     cursor: default;
 }
 
-.modal div span {
+.modal__erro div span {
     display: block;
     width: 80%;
     color: var(--whiteFixed);
@@ -40,13 +40,80 @@
     cursor: default;
 }
 
-.modal > div > div {
+.modal__erro > div > div {
     text-align: end;
 }
 
-.modal > div > div button {
+.modal__erro > div > div button {
     padding: 0 12px;
 }
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: var(--grey-opacity-1);
+    padding: 50px 5% 0 5%;
+    display: none;
+    justify-content: center;
+    opacity: 0;
+}
+
+.modal > div {
+    background-color: var(--whiteFixed);
+    border-radius: var(--radius-big);
+    padding: 40px 24px;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 761px;
+    max-width: 100%;
+    height: max-content;
+    transform: translatey(-200%);
+}
+
+.modal > div button {
+    width: 40px;
+    height: 40px;
+    background-image: url(../assets/closeModal.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right: 13px;
+    cursor: pointer;
+}
+
+.modal > div .user {
+    margin-bottom: 32px;
+}
+
+.modal > div .user div {
+    flex-direction: column;
+
+}
+
+.modal > div > h2 {
+    margin-bottom: 20px;
+}
+
+@media (min-width:768px) {
+    .modal__erro {
+        align-items: end;
+        justify-content: end;
+        padding: 0 22px 44px 0;
+    }
+
+    .modal {
+        padding: 100px 5% 0 5%;
+    }
+}
+
 
 .show__modal {
     display: flex;
@@ -59,6 +126,14 @@
 
 .show__modal .div {
     animation: mostrarDivModal 0.8s both;
+}
+
+.appear__modal {
+    animation: abrirModal 0.5s ease-in-out both;
+}
+
+.hidden__modal {
+    animation: fecharModal 0.5s ease-in-out both;
 }
 
 @keyframes mostrarModal {
@@ -89,10 +164,30 @@
     }
 }
 
-@media (min-width:768px) {
-    .modal {
-        align-items: end;
-        justify-content: end;
-        padding: 0 22px 44px 0;
+@keyframes abrirModal {
+    0% {
+        transform: translatey(-200%);
+    }
+
+    70% {
+        transform: translatey(10%);
+    }
+
+    100% {
+        transform: translatey(0%);
+    }
+}
+
+@keyframes fecharModal {
+    0% {
+        transform: translatey(0%);
+    }
+
+    30% {
+        transform: translatey(10%);
+    }
+
+    100% {
+        transform: translatey(-200%);
     }
 }
