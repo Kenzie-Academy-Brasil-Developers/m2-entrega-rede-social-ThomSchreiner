@@ -110,5 +110,6 @@
 
 .btn__outline__medium__active {
     background-color: var(--brand-1);
+    border-color: var(--brand-1);
     color: var(--whiteFixed);
 }

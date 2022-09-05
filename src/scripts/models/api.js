@@ -117,7 +117,7 @@ export class Api {
                             .catch(erro => console.log(erro))
 
         async function getLastPosts(countPosts) {
-            const posts = await fetch(`${Api.urlBase}posts/?limit=10&offset=${countPosts-10}`, {
+            const posts = await fetch(`${Api.urlBase}posts/?limit=50&offset=${countPosts-50}`, {
                                     method: "GET",
                                     headers: Api.header
                                 })
@@ -177,5 +177,37 @@ export class Api {
                             })
                             .catch(erro => console.log(erro))
         return like
+    }
+
+    static async follow(body, button) {
+        const follow = await fetch(`${this.urlBase}users/follow/`, {
+                                method: "POST",
+                                headers: this.header,
+                                body: JSON.stringify(body)
+                            })
+                            .then(resp => resp.json())
+                            .then(resp => {
+                                button.setAttribute("data-follow", resp.uuid)
+                                button.classList.add("btn__outline__medium__active")
+                                button.innerText = "Seguindo"
+                                return resp
+                            })
+                            .catch(erro => console.log(erro))
+        return follow
+    }
+
+    static async unFollow(idFollow, button) {
+        const follow = await fetch(`${this.urlBase}users/unfollow/${idFollow}/`, {
+                                method: "DELETE",
+                                headers: this.header
+                            })
+                            .then(resp => {
+                                button.setAttribute("data-follow", "false")
+                                button.classList.remove("btn__outline__medium__active")
+                                button.innerText = "Seguir"
+                                return resp
+                            })
+                            .catch(erro => console.log(erro))
+        return follow
     }
 }

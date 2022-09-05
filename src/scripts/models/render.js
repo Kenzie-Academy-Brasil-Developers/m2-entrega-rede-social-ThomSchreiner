@@ -94,7 +94,7 @@ export class Render {
         const jaFoi = []
         let maxUser = 3
         for(let i = 0; i < maxUser; i++) {
-            let random = Math.floor(Math.random() * (11 - 1))
+            let random = Math.floor(Math.random() * (51 - 1))
             if(!jaFoi.includes(random)) {
                 user.push(users[i])
                 jaFoi.push(random)
@@ -108,6 +108,7 @@ export class Render {
 
     static renderSuggestedUsers(users) {
         const ulAside = document.querySelector("aside ul")
+        const user_uuid = localStorage.getItem("@kenzieRedeSocial:user_uuid")
         ulAside.innerHTML = ""
 
         users.forEach((user) => {
@@ -136,14 +137,29 @@ export class Render {
             img.alt = user.username
             h2Nome.innerText = user.username
             pTrabalho.innerText = user.work_at
-            button.innerText = "Seguir"
             button.id = user.uuid
+
+            let verifyFollow = user.followers.find((element) => {
+                if(element.followers_users_id.uuid == user_uuid) {
+                    return true
+                }
+            })
+            if(verifyFollow == undefined) {
+                button.setAttribute("data-follow", "false")
+                button.innerText = "Seguir"
+            } else {
+                button.setAttribute("data-follow", verificarLike.uuid)
+                button.classList.add("btn__outline__medium__active")
+                button.innerText = "Seguindo"
+            }
 
             divBody.append(h2Nome, pTrabalho)
             divHeader.append(img, divBody)
             divFooter.appendChild(button)
             li.append(divHeader, divFooter)
             ulAside.appendChild(li)
+
+            button.addEventListener("click", follow)
         })
     }
 }
@@ -154,5 +170,15 @@ function eventLike(event) {
         Api.like(body, event.target, event.target.nextElementSibling)
     } else {
         Api.desLike(event.target.getAttribute("data-like"), event.target, event.target.nextElementSibling)
+    }
+}
+
+function follow(event) {
+
+    if(event.target.getAttribute("data-follow") == "false") {
+        const body = { "following_users_uuid": event.target.id }
+        Api.follow(body, event.target)
+    } else {
+        Api.unFollow(event.target.getAttribute("data-follow"), event.target)
     }
 }
